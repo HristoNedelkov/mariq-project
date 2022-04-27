@@ -18,7 +18,7 @@ let paths = {
   catalog: document.querySelector("#catalog-template"),
   contact: document.querySelector("#contact"),
   gallery: document.querySelector("#work"),
-  //info: document.querySelector("#info-template"),
+   info: document.querySelector("#info-template"),
   "about me": document.querySelector("#about-template"),
 };
 const navigation = Array.from(
