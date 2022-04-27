@@ -693,8 +693,7 @@
             Personal computer devices that are used to develop the personal area network are the laptop, mobile phones, media player and play stations."
           />
         </div>
-         
-        
+
         <div class="w3-col 2 m6">
           <img
             src="https://static.javatpoint.com/tutorial/computer-network/images/wide-area-network.png"
@@ -810,45 +809,27 @@
           Email: mail@mariqposhta.com
         </p>
         <br />
-        <form action="/action_page.php" target="_blank">
+        <form onsubmit="return false">
           <p>
             <input
               class="w3-input w3-border"
               type="text"
               placeholder="Name"
-              required
               name="Name"
-            />
-          </p>
-          <p>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              placeholder="Email"
-              required
-              name="Email"
-            />
-          </p>
-          <p>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              placeholder="Subject"
-              required
-              name="Subject"
-            />
-          </p>
-          <p>
-            <input
+              id="input-name-id"
+              />
+            </p>
+            <p>
+              <input
+              id="input-message-id"
               class="w3-input w3-border"
               type="text"
               placeholder="Message"
-              required
               name="Message"
             />
           </p>
           <p>
-            <button class="w3-button w3-black" type="submit">
+            <button class="w3-button w3-black" onclick="postComment()">
               <i class="fa fa-paper-plane"></i> SEND MESSAGE
             </button>
           </p>
@@ -876,30 +857,8 @@
 
     <script src="./slideshow.js" defer></script>
     <script src="./router.js" defer></script>
-    <script>
-      // Modal Image Gallery
-      function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-      }
-
-      // Toggle between showing and hiding the sidebar when clicking the menu icon
-      var mySidebar = document.getElementById("mySidebar");
-
-      function w3_open() {
-        if (mySidebar.style.display === "block") {
-          mySidebar.style.display = "none";
-        } else {
-          mySidebar.style.display = "block";
-        }
-      }
-
-      // Close the sidebar with the close button
-      function w3_close() {
-        mySidebar.style.display = "none";
-      }
-    </script>
+    <script src="./db-connection.js"></script>
+    <script src="./app.js" defer></script>
+    
   </body>
 </html>
