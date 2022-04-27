@@ -338,6 +338,7 @@
           <p id="caption" class="w3-opacity w3-large"></p>
         </div>
       </div>
+
       <h3 class="w3-center">Тук ще е галерията</h3>
       <p class="w3-center w3-large">
         Разгледайте различни видове мрежи -> снимките ще се сложат утре, че ми
@@ -345,16 +346,23 @@
       </p>
 
       <div class="w3-row-padding" style="margin-top: 64px">
-        <div class="w3-col l3 m6">
+        <div class="w3-col 1 m6">
           <img
-            src="/w3images/tech_mic.jpg"
+            src="./img/mreja.png"
             style="width: 100%"
             onclick="onClick(this)"
             class="w3-hover-opacity"
-            alt="A microphone"
+            alt="Вид мрежова топология, в която централен възел (‘корен’ – най-горното ниво в йерархията) е свързан до един или повече възли, които са едно ниво по-ниско в йерархията, чрез ‘point to point’ връзка между възлите, докато всеки възел от второ ниво е свързан с един или повече възли от нивото по-ниско от неговото също с ‘point to point’ връзка. ‘Коренът’ е единствения възел, който няма по-горно ниво в йерархията. За да бъде мрежовата топология дърво трябва да съдържа поне три нива, иначе мрежовата топология е звезда.
+            Предимства:
+            - лесно се откриват повреди в съобщителната среда;
+            - лесно се откриват нови или съществуващи компютри.
+            Недостатъци:
+            - ‘коренът’ е слабо място по отношение на надеждността;
+            - При повреда на компютър (възел) от горно ниво, всички негови наследници губят връзка с мрежата.
+            "
           />
         </div>
-        <div class="w3-col l3 m6">
+        <div class="w3-col 1 m6">
           <img
             src="/w3images/tech_phone.jpg"
             style="width: 100%"
@@ -363,24 +371,7 @@
             alt="A phone"
           />
         </div>
-        <div class="w3-col l3 m6">
-          <img
-            src="/w3images/tech_drone.jpg"
-            style="width: 100%"
-            onclick="onClick(this)"
-            class="w3-hover-opacity"
-            alt="A drone"
-          />
-        </div>
-        <div class="w3-col l3 m6">
-          <img
-            src="/w3images/tech_sound.jpg"
-            style="width: 100%"
-            onclick="onClick(this)"
-            class="w3-hover-opacity"
-            alt="Soundbox"
-          />
-        </div>
+         
       </div>
 
       <div class="w3-row-padding w3-section">

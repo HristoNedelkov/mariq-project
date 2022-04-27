@@ -24,8 +24,7 @@ let paths = {
 const navigation = Array.from(
   document.querySelector("#navigation-template").children
 );
-const keys = Object.keys(paths);
-
+ 
 navigation.forEach((element) => {
   console.log(element.textContent.trim());
   element.addEventListener("click", (e) => {
