@@ -22,18 +22,21 @@ function w3_close() {
   mySidebar.style.display = "none";
 }
 const divGenerate = (obj) => {
-    return `
+  return `
         <div class="field comment-card" >
         <label for="comment">| Автор: ${obj.name} |</label>
         <p>${obj.message}</p>
         </div>`;
-  };
+};
 function postComment() {
   let name = document.querySelector("#input-name-id");
   let message = document.querySelector("#input-message-id");
   if (name.value != "" && message.value != "") {
     commentServices.add({ name: name.value, message: message.value });
     alert("Успешно публикуван коментар!");
+    reloadComments();
+    name.value = "";
+    message.value = "";
   } else {
     alert("Моля попълнете всички полета на формата!");
   }

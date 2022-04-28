@@ -26,6 +26,20 @@ let paths = {
 const navigation = Array.from(
   document.querySelector("#navigation-template").children
 );
+function reloadComments() {
+  commentsDiv.innerHTML = "";
+  commentServices
+    .getAll()
+    .then((res) => {
+      if (Object.keys(res).length != 0) return res;
+      else return {};
+    })
+    .then((data) => {
+      for (const el of Object.entries(data)) {
+        commentsDiv.innerHTML += divGenerate(el[1]);
+      }
+    });
+}
 
 navigation.forEach((element) => {
   console.log(element.textContent.trim());
@@ -37,19 +51,7 @@ navigation.forEach((element) => {
       window.scrollTo(0, 0);
     } else if (text == "contact") {
       show("contact");
-      if (commentsDiv.innerHTML.trim() == "") {
-        commentServices
-          .getAll()
-          .then((res) => {
-            if (Object.keys(res).length != 0) return res;
-            else return {};
-          })
-          .then((data) => {
-            for (const el of Object.entries(data)) {
-              commentsDiv.innerHTML += divGenerate(el[1]);
-            }
-          });
-      }
+      reloadComments();
     } else {
       show(text);
       window.scrollTo(0, 0);
