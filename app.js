@@ -21,7 +21,13 @@ function w3_open() {
 function w3_close() {
   mySidebar.style.display = "none";
 }
-
+const divGenerate = (obj) => {
+    return `
+        <div class="field comment-card" >
+        <label for="comment">| Автор: ${obj.name} |</label>
+        <p>${obj.message}</p>
+        </div>`;
+  };
 function postComment() {
   let name = document.querySelector("#input-name-id");
   let message = document.querySelector("#input-message-id");

@@ -1,3 +1,5 @@
+const commentsDiv = document.getElementsByClassName("comments-section")[0];
+
 function trimUrl(path) {
   window.history.replaceState({}, "", "/" + path);
   return;
@@ -18,13 +20,13 @@ let paths = {
   catalog: document.querySelector("#catalog-template"),
   contact: document.querySelector("#contact"),
   gallery: document.querySelector("#work"),
-   info: document.querySelector("#info-template"),
+  info: document.querySelector("#info-template"),
   "about me": document.querySelector("#about-template"),
 };
 const navigation = Array.from(
   document.querySelector("#navigation-template").children
 );
- 
+
 navigation.forEach((element) => {
   console.log(element.textContent.trim());
   element.addEventListener("click", (e) => {
@@ -33,6 +35,21 @@ navigation.forEach((element) => {
     if (text == "home") {
       show("home", "home-info");
       window.scrollTo(0, 0);
+    } else if (text == "contact") {
+      show("contact");
+      if (commentsDiv.innerHTML.trim() == "") {
+        commentServices
+          .getAll()
+          .then((res) => {
+            if (Object.keys(res).length != 0) return res;
+            else return {};
+          })
+          .then((data) => {
+            for (const el of Object.entries(data)) {
+              commentsDiv.innerHTML += divGenerate(el[1]);
+            }
+          });
+      }
     } else {
       show(text);
       window.scrollTo(0, 0);
